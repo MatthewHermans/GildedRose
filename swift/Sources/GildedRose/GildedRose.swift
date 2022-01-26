@@ -1,8 +1,10 @@
 import CoreFoundation
+import Foundation
 public class GildedRose {
     static var agedBrie = "Aged Brie"  // added static strings for security reasons and for code readabilty
     static var sulfuras = "Sulfuras, Hand of Ragnaros"
     static var backstagePasses = "Backstage passes to a TAFKAL80ETC concert"
+    static var ConjuredItem = "Conjured"
     var items: [Item]
     
     public init(items: [Item]) {
@@ -11,9 +13,10 @@ public class GildedRose {
     
     public func updateQuality() {
         for item in items {
+            let decayRate = item.name.contains(GildedRose.ConjuredItem) ? -2 : -1 // feature proof for when multiple diffrent conjured items are added
             if item.name != GildedRose.agedBrie && item.name != GildedRose.backstagePasses {
                 if item.name != GildedRose.sulfuras {
-                    updateQualityitem(item: item, adjustment: -1)
+                    updateQualityitem(item: item, adjustment: decayRate)
                 }
             } else {
                 updateQualityitem(item: item, adjustment: 1)
@@ -36,7 +39,7 @@ public class GildedRose {
                 if item.name != GildedRose.agedBrie {
                     if item.name != GildedRose.backstagePasses {
                         if item.name != GildedRose.sulfuras {
-                            updateQualityitem(item: item, adjustment: -1)
+                            updateQualityitem(item: item, adjustment: decayRate)
                         }
                         
                     } else {
