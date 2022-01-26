@@ -14,7 +14,7 @@ let items = [
 
 let app = GildedRose(items: items);
 
-var days = 7;
+var days = 12;
 if CommandLine.argc > 1 {
     days = Int(CommandLine.arguments[1])! + 1
 }
