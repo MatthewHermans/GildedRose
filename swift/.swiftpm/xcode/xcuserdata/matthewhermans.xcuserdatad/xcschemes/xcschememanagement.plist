@@ -20,5 +20,23 @@
 			<integer>2</integer>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>GildedRose</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>GildedRoseApp</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>GildedRoseTests</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
